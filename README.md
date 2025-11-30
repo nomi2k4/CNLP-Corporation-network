@@ -3,11 +3,11 @@
 This repository contains the complete implementation and documentation of a multi-site enterprise network designed for CNLP Corporation.
 The network consists of two locations — Head Office and Branch Office — each having three departments:
 
-HR
+-HR
 
-IT
+-IT
 
-Finance
+-Finance
 
 The project was built and tested using Cisco Packet Tracer, following standard networking practices including VLAN segmentation, DHCP automation, router-on-a-stick inter-VLAN routing, and WAN connectivity.
 
@@ -161,15 +161,15 @@ Add centralized server farm
 
 ## 👥 Team Members
 
-Nouman Naeem (65589)
+1.Nouman Naeem 
 
-Muhammad Sagheer (65647)
+2.Muhammad Sagheer 
 
-Muhammad Abdullah (62374)
+3.Muhammad Abdullah 
 
-Bilal Iftikhar Kiyani (62214)
+4.Bilal Iftikhar Kiyani 
 
-Sheheryar Arshad (63607)
+5.Sheheryar Arshad 
 
 ## 📄 License
 
