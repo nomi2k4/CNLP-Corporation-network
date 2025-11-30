@@ -44,15 +44,6 @@ Provides domain name resolution inside the network.
 
 Detailed report including design, configuration, testing, screenshots, and future improvements.
 
-## 📁 Repository Structure
-/CNLP-Network-Project
-│
-├── Final_Report.docx          # Complete project documentation
-├── Network_Topology.png       # Full Packet Tracer topology
-├── CNLP_Network.pkt           # Cisco Packet Tracer project file
-├── README.md                  # This file
-└── /Screenshots               # VLAN, DHCP, routing & ping test screenshots
-
 ## 🧩 Network Components
 Head Office
 
