@@ -1,104 +1,155 @@
-# CNLP-Corporation-network
-This repository contains the complete implementation and documentation of a multi-site enterprise network designed for CNLP Corporation.
-The network consists of two locations — Head Office and Branch Office — each having three departments:
--HR
--IT
--Finance
-The project was built and tested using Cisco Packet Tracer, following standard networking practices including VLAN segmentation, DHCP automation, router-on-a-stick inter-VLAN routing, and WAN connectivity.
+<h1 align="center">CNLP Corporation – Multi-Site Network Design</h1>
+<h3 align="center">Cisco Packet Tracer | VLANs | DHCP | Inter-VLAN Routing | WAN</h3>
 
-## 📌 Project Features
-✅ Two-Site Enterprise Network
--Head Office
--Branch Office
--Connected through a WAN link.
-✅ VLAN Segmentation
-  -Each department operates in its own isolated VLAN to ensure security and manageability.
-✅ DHCP Server Integration
-  -Automatic IP addresses assigned to all PCs in both sites.
-✅ Inter-VLAN Routing
-  -Router-on-a-stick configuration used for routing between VLANs.
-✅ WAN Connectivity
-  -Routers at both sites are connected through a point-to-point link.
-✅ DNS Server
-  -Provides domain name resolution inside the network.
-✅ Full Documentation
-  -Detailed report including design, configuration, testing, screenshots, and future improvements.
+<p align="center">
+A complete enterprise-level multi-site network designed for CNLP Corporation using Cisco Packet Tracer.<br>
+This project includes VLAN segmentation, DHCP automation, router-on-a-stick, WAN connectivity, DNS, testing & documentation.
+</p>
 
-## 🧩 Network Components
-Head Office
-  -3 Switches (HR, IT, Finance)
-  -1 Router
-  -DHCP Server
-  -DNS Server
-  -15 PCs (5 per department)
-Branch Office
-  -3 Switches (HR, IT, Finance)
-  -1 Router
-  -15 PCs (5 per department)
-  
-## 🌐 IP Addressing Summary
-VLAN	Network	Gateway	Department
-2	192.168.2.0/24	varies	HO (All Depts)
-3	192.168.3.0/24	varies	BO (All Depts)
+---
 
-Subnets were divided further for each department using /27 ranges.
+<h2>📌 Project Overview</h2>
 
-## 🔧 Key Configurations
-✔ VLANs
-  -HO VLAN IDs: 2
-  -BO VLAN IDs: 3
-  -All switches use configured access ports & trunk links.
+<p>
+This project implements a two-site enterprise network for CNLP Corporation.<br>
+Both sites contain three departments — <b>HR, IT, and Finance</b>.<br>
+The network is designed using industry-standard concepts such as VLAN segmentation, DHCP, hierarchical design, and WAN routing.
+</p>
 
-✔ Inter-VLAN Routing
-Router sub-interfaces example:
-interface FastEthernet6/0.1
- encapsulation dot1Q 2
- ip address 192.168.2.97 255.255.255.224
+---
 
-✔ DHCP Pools
-Each department has a dedicated pool with:
-  -IP Range
-  -Subnet Mask
-  -Gateway
-  -DNS
+<h2>🏢 Sites & Departments</h2>
 
-✔ WAN Link
-Serial/ethernet link between routers.
+<ul>
+  <li><b>Head Office</b> (HR, IT, Finance)</li>
+  <li><b>Branch Office</b> (HR, IT, Finance)</li>
+  <li>15 PCs per site (5 per department)</li>
+  <li>WAN link between both routers</li>
+</ul>
 
-## 🧪 Testing Performed
-✔ Connectivity Tests
-  -PC → PC (same VLAN)
-  -PC → PC (inter-VLAN)
-  -Head Office → Branch Office
-  -Branch Office → Head Office
+---
 
-✔ DHCP Tests
-  -PCs receiving correct IP, Mask, Gateway, DNS
-  -Verified using ipconfig
+<h2>🎯 Objectives</h2>
 
-✔ Routing Tests
-  -Successful routing between subnets
-  -Verified through ping tests
+<ul>
+  <li>Implement VLANs for department isolation</li>
+  <li>Configure DHCP for automatic IP assignment</li>
+  <li>Enable inter-VLAN routing using router-on-a-stick</li>
+  <li>Establish WAN connectivity between Head & Branch sites</li>
+  <li>Set up DNS server for internal hostname resolution</li>
+  <li>Achieve full connectivity across all devices</li>
+</ul>
 
-## 🚧 Limitations
-  -Only one WAN link (no redundancy)
-  -No ACLs configured for security
-  -No firewall
-  -No IPv6 addressing
+---
 
-## 🚀 Future Improvements
-  -Add ACLs for department-level security
-  -Add backup WAN link
-  -Add wireless network for mobility
-  -Add IPv6
-  -Add centralized server farm
+<h2>🧩 Network Components</h2>
 
-## 👥 Team Members
-  -1.Nouman Naeem 
-  -2.Muhammad Sagheer 
-  -3.Muhammad Abdullah 
-  -4.Bilal Iftikhar Kiyani 
-  -5.Sheheryar Arshad 
+<h3>Head Office</h3>
+<ul>
+  <li>3 Switches (HR, IT, Finance)</li>
+  <li>1 Router (HO-Router)</li>
+  <li>DHCP Server</li>
+  <li>DNS Server</li>
+  <li>15 PCs</li>
+</ul>
 
-## 📄 License
-This project is created for educational purposes and can be reused with credit.
+<h3>Branch Office</h3>
+<ul>
+  <li>3 Switches (HR, IT, Finance)</li>
+  <li>1 Router (BO-Router)</li>
+  <li>15 PCs</li>
+</ul>
+
+---
+
+<h2>🌐 IP Addressing Summary</h2>
+
+<table>
+<tr><th>VLAN</th><th>Network</th><th>Gateway</th><th>Assigned To</th></tr>
+<tr><td>2</td><td>192.168.2.0/24</td><td>varies</td><td>Head Office</td></tr>
+<tr><td>3</td><td>192.168.3.0/24</td><td>varies</td><td>Branch Office</td></tr>
+</table>
+
+<p>Subnetting uses <b>/27 blocks</b> for each department.</p>
+
+---
+
+<h2>🔧 VLAN & Routing Configuration</h2>
+
+<h3>✔ VLANs</h3>
+<ul>
+  <li>HO VLAN ID: <b>2</b></li>
+  <li>BO VLAN ID: <b>3</b></li>
+</ul>
+
+<h3>✔ Router-on-a-Stick (Inter-VLAN Routing)</h3>
+
+
+<h3>✔ DHCP Configuration</h3>
+
+
+<h3>✔ WAN Link</h3>
+
+
+---
+
+<h2>🧪 Testing & Verification</h2>
+
+<h3>✔ Connectivity Tests</h3>
+<ul>
+  <li>PC ↔ PC (within same VLAN)</li>
+  <li>Inter-VLAN communication (via router)</li>
+  <li>HO ↔ BO communication (via WAN link)</li>
+</ul>
+
+<h3>✔ DHCP Tests</h3>
+<ul>
+  <li>All PCs received correct IP configuration</li>
+  <li>Correct Mask, Gateway, DNS applied automatically</li>
+</ul>
+
+<h3>✔ Ping & Routing Tests</h3>
+<p>
+All subnets successfully ping each other, confirming complete inter-site and inter-VLAN connectivity.
+</p>
+
+---
+
+<h2>🚧 Limitations</h2>
+
+<ul>
+  <li>Single WAN link (no redundancy)</li>
+  <li>No firewall implemented</li>
+  <li>No ACLs for traffic filtering</li>
+  <li>No IPv6 deployment</li>
+</ul>
+
+---
+
+<h2>🚀 Future Improvements</h2>
+
+<ul>
+  <li>Add ACLs for enhanced security</li>
+  <li>Add backup WAN link for redundancy</li>
+  <li>Implement IPv6 addressing</li>
+  <li>Add wireless access points</li>
+  <li>Deploy a firewall for secure perimeter protection</li>
+</ul>
+
+---
+
+<h2>👥 Team Members</h2>
+<ul>
+  <li>Nouman Naeem (65589)</li>
+  <li>Muhammad Sagheer (65647)</li>
+  <li>Muhammad Abdullah (62374)</li>
+  <li>Bilal Iftikhar Kiyani (62214)</li>
+  <li>Sheheryar Arshad (63607)</li>
+</ul>
+
+---
+
+<h2>📄 License</h2>
+
+<p>This project is created for academic purposes. Reuse with credit is allowed.</p>
+
